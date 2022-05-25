@@ -22,13 +22,23 @@ class Home extends React.Component {
 
   handleChange = ({ target }) => {
     const { value } = target;
-    console.log(value);
+    // console.log(value);
     this.setState({ inputValue: value });
   }
 
-  handleCategoryClick = ({ target }) => {
+  handleCategoryClick = async ({ target }) => {
     const { id } = target;
+    const { inputValue, selectedCategoryId } = this.state;
     this.setState({ selectedCategoryId: id });
+    const
+      fetchCategory = await
+      getProductsFromCategoryAndQuery(selectedCategoryId, inputValue);
+    // console.log(fetchCategory);
+    this.setState({ products: fetchCategory.results });
+    console.log(fetchCategory.results);
+    fetchCategory.results
+      .filter((categoryId) => categoryId === fetchCategory.results.category_id);
+    this.setState({ selectedCategoryId: fetchCategory.results.category_id });
   }
 
   handleSearchClick = async () => {
