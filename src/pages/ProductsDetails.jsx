@@ -39,6 +39,7 @@ class ProductsDetails extends React.Component {
     );
   }
 }
+// atualizando branch
 
 ProductsDetails.propTypes = {
   id: PropTypes.string,
