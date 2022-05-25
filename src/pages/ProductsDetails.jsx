@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { getProductsFromQuery } from '../services/api';
 
 class ProductsDetails extends React.Component {
@@ -7,7 +8,6 @@ class ProductsDetails extends React.Component {
     productPrice: 0,
     productName: '',
     productImage: '',
-    // productId: '',
   }
 
   componentDidMount() {
@@ -15,10 +15,7 @@ class ProductsDetails extends React.Component {
   }
 
   requestApi = async () => {
-    // console.log(this.props.match);
     const { match: { params: { id } } } = this.props;
-    /* const { productId } = this.state;
-    this.setState({ productId: id }); */
     const result = await getProductsFromQuery(id);
     const { title, thumbnail, price } = result;
     this.setState({
@@ -30,16 +27,28 @@ class ProductsDetails extends React.Component {
 
   render() {
     const { productPrice, productName, productImage } = this.state;
+    const { addToCart } = this.props;
     return (
       <div>
         <img src={ productImage } alt={ productName } />
         <h2 data-testid="product-detail-name">{ productName }</h2>
         <h5>{ productPrice }</h5>
+        <button
+          name={ productName }
+          id={ productPrice }
+          type="button"
+          data-testid="product-detail-add-to-cart"
+          onClick={ addToCart }
+        >
+          Adicionar ao carrinho
+        </button>
+        <Link to="/cart" data-testid="shopping-cart-button">
+          <button type="button">Carrinho</button>
+        </Link>
       </div>
     );
   }
 }
-// atualizando branch
 
 ProductsDetails.propTypes = {
   id: PropTypes.string,
