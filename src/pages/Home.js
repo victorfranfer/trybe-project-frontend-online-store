@@ -38,7 +38,7 @@ class Home extends React.Component {
     console.log(fetchCategory.results);
     fetchCategory.results
       .filter((categoryId) => categoryId === fetchCategory.results.category_id);
-   // this.setState({ selectedCategoryId: fetchCategory.results.category_id });
+    // this.setState({ selectedCategoryId: fetchCategory.results.category_id });
   }
 
   handleSearchClick = async () => {
@@ -86,6 +86,7 @@ class Home extends React.Component {
                 image={ product.thumbnail }
                 price={ product.price }
                 key={ product.id }
+                id={ product.id }
               />
             ))}
         </section>
