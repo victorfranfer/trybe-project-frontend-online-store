@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import CategoriesList from '../components/CategoriesList';
 import ProductsCard from '../components/ProductsCard';
@@ -60,6 +61,7 @@ class Home extends React.Component {
 
   render() {
     const { products } = this.state;
+    const { addToCart } = this.props;
     return (
       <div>
         <input type="text" data-testid="query-input" onChange={ this.handleChange } />
@@ -86,6 +88,7 @@ class Home extends React.Component {
                 image={ product.thumbnail }
                 price={ product.price }
                 key={ product.id }
+                addToCart={ addToCart }
                 id={ product.id }
               />
             ))}
@@ -94,5 +97,9 @@ class Home extends React.Component {
     );
   }
 }
+
+Home.propTypes = {
+  addToCart: PropTypes.func,
+}.isRequired;
 
 export default Home;
