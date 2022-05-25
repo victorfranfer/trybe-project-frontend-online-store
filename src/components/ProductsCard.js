@@ -20,10 +20,10 @@ class ProductsCard extends React.Component {
             </span>
           </div>
         </Link>
-        <button 
+        <button
           name={ name }
           id={ price.toFixed(2) }
-          type="button" 
+          type="button"
           data-testid="product-add-to-cart"
           onClick={ addToCart }
         >
