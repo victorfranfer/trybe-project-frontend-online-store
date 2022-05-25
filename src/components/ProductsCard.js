@@ -10,7 +10,7 @@ class ProductsCard extends React.Component {
         <img src={ image } alt={ name } />
         <span>
           Preço:
-          { price }
+          { price.toFixed(2) }
         </span>
       </div>
     );
