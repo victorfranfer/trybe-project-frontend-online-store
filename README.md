@@ -1,4 +1,4 @@
-# :construction: README customizado em construção ! :construction:
+# Frontend Online Store - Trybe Project
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
 
@@ -11,3 +11,6 @@ Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua cr
 - quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
 - quais arquivos/pastas foram desenvolvidos pela Trybe.
 -->
+Group project in which we had to develop an online store, with categories and a search bar for the initial page, along with a shopping cart built upon the localStorage. 
+
+Done in June 2022.
